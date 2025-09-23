@@ -1,0 +1,592 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fff59d;
+    /* bright yellow */
+    color: #001f54;
+    /* deep blue text */
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* distance from top of viewport */
+    z-index: 1000;
+    /* ensures header stays above content */
+}
+
+/* Hero with gradient animation */
+.hero {
+    height: 70vh;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: #fff;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Skills badges */
+.skill-badge {
+    background-color: #ffc107;
+    color: #0d6efd;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+}
+
+/* Card hover effect */
+.hover-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Logo styling */
+.logo-img {
+    max-height: 50px;
+    /* Adjust size */
+    width: auto;
+}
+
+/* Navbar adjustments */
+
+
+.navbar-nav .btn {
+    font-weight: 600;
+    transition: transform 0.2s ease-in-out;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 25px;
+}
+
+.navbar-nav .btn:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    margin-left: auto;
+    /* pushes nav to the right */
+    align-items: center;
+}
+
+.blue-shadow {
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    /* subtle blue shadow */
+}
+
+
+/* Offcanvas link styling */
+.offcanvas-body .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    color: #0d6efd;
+    text-align: left;
+}
+
+.offcanvas-body .nav-link i {
+    margin-right: 8px;
+
+}
+
+
+/* Offcanvas Menu Customization */
+.blue-menu {
+    background-color: #0d6efd;
+    /* Your blue */
+    color: #ffc107;
+    /* Yellow text for contrast */
+}
+
+.blue-menu .offcanvas-header {
+    border-bottom: 1px solid #ffc107;
+    /* subtle divider */
+}
+
+.blue-menu .offcanvas-title {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.blue-menu .nav-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #ffc107;
+    /* same as desktop primary */
+    color: #001f54;
+    /* deep blue text */
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+.blue-menu .nav-link i {
+    margin-right: 0.5rem;
+}
+
+.blue-menu .nav-link:hover {
+    background-color: #ffdd00;
+    /* brighter yellow on hover */
+    color: #001f54;
+    transform: scale(1.05);
+}
+
+/* Close button color */
+.blue-menu .btn-close {
+    filter: invert(100%);
+    /* makes it visible on blue background */
+}
+
+/* Ensure Offcanvas full height scrolls on mobile if content is long */
+.blue-menu .offcanvas-body {
+    overflow-y: auto;
+    padding-top: 1rem;
+}
+
+.blue-menu .nav-link.contact-link {
+    background-color: #001f54;
+    /* deep blue */
+    color: #ffc107;
+}
+
+.blue-menu .nav-link.contact-link:hover {
+    background-color: #2563eb;
+    /* hover deep blue */
+    color: #ffc107;
+}
+
+/* Optional: subtle shadow to make it pop */
+.blue-menu {
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-link:hover {
+    color: burlywood !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Collapsible Right Menu */
+/* Keep Menu Toggle inside header */
+.menu-toggle {
+    display: inline-flex;
+    /* only as wide as content */
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    /* positions inside header */
+    top: 175px;
+    right: 20px;
+    background-color: #ffe74c;
+    color: #001f54;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.menu-toggle:hover {
+    background-color: #ffd700;
+}
+
+
+
+/* Hidden sidebar */
+.sidebar-nav-collapsible {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #001f54;
+    color: #ffe74c;
+    padding-top: 3rem;
+    transition: right 0.3s;
+    z-index: 999;
+}
+
+.sidebar-nav-collapsible ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav-collapsible li {
+    margin: 1rem 0;
+}
+
+.sidebar-nav-collapsible a {
+    color: #ffe74c;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-nav-collapsible a:hover {
+    background-color: #ffe74c;
+    color: #001f54;
+    border-radius: 0 10px 10px 0;
+}
+
+/* .sidebar-nav-collapsible ul li a:visited {
+    color: rgb(236, 114, 70);
+} */
+
+/* Active sidebar open */
+.sidebar-nav-collapsible.open {
+    right: 0;
+}
+
+
+/* Section Titles */
+h2 {
+    border-bottom: 3px solid #001f54;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+/* Profile Picture */
+#about img {
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 5px solid #001f54;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+    margin: 1rem auto;
+}
+
+#about img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 31, 84, 0.6);
+}
+
+/* Skills Section */
+#skills {
+    background-color: #001f54;
+    color: #fff59d;
+}
+
+#skills .d-flex span {
+    background-color: #ffdd00;
+    color: #001f54;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+#skills .d-flex span:hover {
+    transform: scale(1.1);
+    background-color: #ffe74c;
+}
+
+/* Call to Action Section */
+.text-center.py-5 {
+    background-color: #001f54;
+    color: #fff59d;
+    transition: background-color 0.3s;
+}
+
+.text-center.py-5 .btn-primary {
+    background-color: #ffdd00;
+    color: #001f54;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* For outline buttons */
+.btn-outline-primary:hover {
+    background-color: #1e3a8a;
+    /* your desired blue */
+    color: #ffffff;
+    /* text color on hover */
+    border-color: #1e3a8a;
+    /* optional: match border to hover bg */
+}
+
+/* For solid buttons (btn-primary) */
+.btn-primary:hover {
+    background-color: #2563eb;
+    /* your desired hover blue */
+    color: #ffffff;
+    /* optional */
+    border-color: #2563eb;
+    /* optional */
+}
+
+
+.text-center.py-5 .btn-primary:hover {
+    background-color: #ffe74c;
+    transform: scale(1.05);
+}
+
+.text-center.py-5 .btn-warning {
+    background-color: #ffe74c;
+    color: #001f54;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.text-center.py-5 .btn-warning:hover {
+    background-color: #ffdd00;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #001f54;
+    color: #ffdd00;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer a {
+    color: #ffdd00;
+    margin: 0;
+    font-size: 0.95rem;
+    transition: transform 0.3s, color 0.3s;
+    text-decoration: none;
+}
+
+footer a:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+
+footer a:visited {
+    color: rgb(236, 114, 70);
+}
+
+/* Buttons & badges hover animations */
+.btn,
+.badge {
+    cursor: pointer;
+}
+
+/* Optional: subtle fade-in on scroll for About and Skills sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about,
+#skills {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Optional: add shadow to skill badges for pop effect */
+#skills .d-flex span {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*  *******PROJECTS PAGE****** */
+
+.hover-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 31, 84, 0.5);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/*  *******CONTACT PAGE****** */
+
+form input,
+form textarea {
+    border: 2px solid #001f54;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffdd00;
+    box-shadow: 0 0 10px rgba(255, 221, 0, 0.5);
+}
+
+form button:hover {
+    transform: scale(1.05);
+    background-color: #ffdd00;
+}
+
+/*  *******CERTIFICATIONS PAGE****** */
+.list-group-item i {
+    margin-right: 10px;
+}
+
+.list-group-item:hover {
+    background-color: #ffe74c;
+    color: #001f54;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+
+/*  *******EXPERIENCE PAGE****** */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid #001f54;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-item h5 {
+    color: #001f54;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/*  *******PROJECTS PAGE****** */
+
+.pop {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+
+
+/* Default: Desktop */
+.nav-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Large screens (lg+) - show desktop nav, hide menu button */
+@media screen and (min-width: 992px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        box-shadow: none;
+    }
+}
+
+/* Medium screens (md: 768px - 991px) */
+@media screen and (max-width: 991px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: inline-flex;
+        position: relative;
+        z-index: 101;
+    }
+
+    .site-title h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small screens (sm: 576px - 767px) */
+@media screen and (max-width: 767px) {
+    .site-title h1 {
+        font-size: 1.2rem;
+    }
+
+    .menu-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .nav-links {
+        width: 180px;
+    }
+}
+
+/* Extra small screens (xs: <576px) */
+@media screen and (max-width: 575px) {
+    .site-title h1 {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        width: 160px;
+        padding: 0.8rem;
+        top: 4rem;
+    }
+
+    .menu-btn {
+        top: 0.8rem;
+        right: 0.8rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
