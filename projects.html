@@ -98,7 +98,6 @@
         <div class="container">
             <h1 class="display-4 fw-bold">My Projects</h1>
             <p class="lead">Innovative web, data, and educational projects</p>
-            <!-- <a href="index.html" class="btn btn-primary mt-3"><i class="fas fa-home"></i> Back to Home</a> -->
         </div>
     </section>
 
@@ -120,6 +119,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="col-md-6 col-lg-4">
                 <div class="card shadow-sm hover-card">
@@ -149,8 +149,60 @@
                 </div>
             </div>
 
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm hover-card">
+                    <!-- Use iframe to embed the Figma prototype -->
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                        src="https://embed.figma.com/proto/wzcC9a0IbEk5KbBjZsvNrF/MindEase--Copy-?node-id=4-628&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A628&embed-host=share"
+                        allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">MindEase App Prototype</h5>
+                        <p class="card-text">Interactive Figma prototype showing the MindEase app interface, navigation,
+                            and design flow.</p>
+                        <a href="https://www.figma.com/proto/wzcC9a0IbEk5KbBjZsvNrF/MindEase--Copy-?node-id=4-628&t=M4s4ifWimtDAW9rP-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A628"
+                            target="_blank" class="btn btn-warning text-primary">
+                            <i class="fas fa-external-link-alt"></i> View Full Prototype
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <!-- Chatbot Icon -->
+    <div id="chat-icon">
+        <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI">
+        <span id="chat-tooltip">Ask Sefunmi AI</span>
+    </div>
+
+    <!-- Chatbox  -->
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI" class="chat-avatar">
+                <span>Sefunmi AI</span>
+            </div>
+            <div class="chat-buttons">
+                <button id="minimize-chat">–</button>
+                <button id="end-chat">End Chat</button>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-btn">Send</button>
+        </div>
+
+        <!-- End Chat Confirmation -->
+        <div id="end-chat-modal" class="hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to end this chat?</p>
+                <button id="confirm-end">Yes</button>
+                <button id="cancel-end">No</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-primary text-warning text-center py-4">
         <div class="mb-3">

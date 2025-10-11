@@ -99,7 +99,6 @@
         <div class="container">
             <h1 class="display-4 fw-bold">Certifications</h1>
             <p class="lead">Skills validated through formal and online programs</p>
-            <!-- <a href="index.html" class="btn btn-primary mt-3"><i class="fas fa-home"></i> Back to Home</a> -->
         </div>
     </section>
 
@@ -115,19 +114,42 @@
             <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Placeholder</li>
             <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Placeholder</li>
         </ul>
-        <!-- <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Python Data Analysis - Coursera
-            </li>
-            <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Tableau Data Visualization -
-                Udemy</li>
-            <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Web Development with HTML/CSS -
-                FreeCodeCamp</li>
-            <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Machine Learning Basics -
-                Coursera</li>
-            <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> GitHub & Version Control
-                Essentials</li>
-        </ul> -->
+
     </section>
+
+    <!-- Chatbot Icon -->
+    <div id="chat-icon">
+        <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI">
+        <span id="chat-tooltip">Ask Sefunmi AI</span>
+    </div>
+
+    <!-- Chatbox  -->
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI" class="chat-avatar">
+                <span>Sefunmi AI</span>
+            </div>
+            <div class="chat-buttons">
+                <button id="minimize-chat">–</button>
+                <button id="end-chat">End Chat</button>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-btn">Send</button>
+        </div>
+
+        <!-- End Chat Confirmation -->
+        <div id="end-chat-modal" class="hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to end this chat?</p>
+                <button id="confirm-end">Yes</button>
+                <button id="cancel-end">No</button>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-primary text-warning text-center py-4">
         <div class="mb-3">

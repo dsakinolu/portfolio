@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body>
 
-    <!-- Hero Section -->
+
     <!-- Hero Section -->
     <header class="bg-warning text-primary py-3">
         <div class="container d-flex justify-content-between align-items-center">
@@ -101,24 +100,6 @@
     </div>
 
 
-    <!-- Right-side Collapsible Menu
-    <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i> Menu
-    </div>
-
-    <nav class="sidebar-nav-collapsible" id="sidebarNav">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="index.html#about"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="projects.html"><i class="fas fa-rocket"></i> Projects</a></li>
-            <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
-            <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-    </nav> -->
-
-
-
     <!-- About Section -->
     <section id="about" class="container py-5">
         <h2 class="text-primary mb-4"><i class="fas fa-user"></i> About Me</h2>
@@ -142,7 +123,8 @@
             combined backend logic, intuitive design, and data visualization.</p>
 
         <p>Beyond academics, I thrive in leadership and community roles. I founded and manage <strong>C.H. Café</strong>
-            at City Church, where I coordinate volunteers, optimize operations, design branding materials, and create
+            at RCCG Covenant House Indianapolis, where I coordinate volunteers, optimize operations, design branding
+            materials, and create
             welcoming spaces for the community. My experiences as a research assistant, teaching intern, and
             equity-focused program intern have reinforced my love for mentorship, learning, and tech-driven problem
             solving.</p>
@@ -152,34 +134,40 @@
             experiences that are innovative, accessible, and meaningful.</p>
     </section>
 
-    <!-- Skills Section -->
-    <!-- <section id="skills" class="py-5">
-        <div class="container bg-primary text-warning p-4 rounded">
-            <h2 class="mb-4"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge">Python</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">SQL/MySQL</span>
-                <span class="badge">Tableau</span>
-                <span class="badge">GitHub</span>
-                <span class="badge">Figma</span>
-                <span class="badge">Data Analysis</span>
-                <span class="badge">JavaScript</span>
+    <!-- Chatbot Icon -->
+    <div id="chat-icon">
+        <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI">
+        <span id="chat-tooltip">Ask Sefunmi AI</span>
+    </div>
 
+    <!-- Chatbox  -->
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chat-header">
+            <div class="chat-title">
+                <img src="images/sefunmi_avatar.PNG" alt="Sefunmi AI" class="chat-avatar">
+                <span>Sefunmi AI</span>
+            </div>
+            <div class="chat-buttons">
+                <button id="minimize-chat">–</button>
+                <button id="end-chat">End Chat</button>
             </div>
         </div>
-    </section> -->
-
-    <!-- Call to Action Section -->
-    <!-- <section class="text-center py-5">
-        <div class="container">
-            <h2 class="mb-4"><i class="fas fa-handshake"></i> Let’s Connect</h2>
-            <a href="contact.html" class="btn btn-primary btn-lg mx-2"><i class="fas fa-envelope"></i> Contact Me</a>
-            <a href="projects.html" class="btn btn-warning btn-lg text-primary mx-2"><i class="fas fa-rocket"></i> See
-                My Work</a>
+        <div class="chat-body" id="chat-body"></div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-btn">Send</button>
         </div>
-    </section> -->
+
+        <!-- End Chat Confirmation -->
+        <div id="end-chat-modal" class="hidden">
+            <div class="modal-content">
+                <p>Are you sure you want to end this chat?</p>
+                <button id="confirm-end">Yes</button>
+                <button id="cancel-end">No</button>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="bg-primary text-warning text-center py-4">

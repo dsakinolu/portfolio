@@ -1,9 +1,7 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #fff59d;
-    /* bright yellow */
     color: #001f54;
-    /* deep blue text */
     scroll-behavior: smooth;
     margin: 0;
 }
@@ -11,9 +9,7 @@ body {
 header {
     position: sticky;
     top: 0;
-    /* distance from top of viewport */
     z-index: 1000;
-    /* ensures header stays above content */
 }
 
 /* Hero with gradient animation */
@@ -65,12 +61,10 @@ header {
 /* Logo styling */
 .logo-img {
     max-height: 50px;
-    /* Adjust size */
     width: auto;
 }
 
-/* Navbar adjustments */
-
+/* Navbar  */
 
 .navbar-nav .btn {
     font-weight: 600;
@@ -86,13 +80,11 @@ header {
 
 .navbar-nav {
     margin-left: auto;
-    /* pushes nav to the right */
     align-items: center;
 }
 
 .blue-shadow {
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-    /* subtle blue shadow */
 }
 
 
@@ -113,14 +105,11 @@ header {
 /* Offcanvas Menu Customization */
 .blue-menu {
     background-color: #0d6efd;
-    /* Your blue */
     color: #ffc107;
-    /* Yellow text for contrast */
 }
 
 .blue-menu .offcanvas-header {
     border-bottom: 1px solid #ffc107;
-    /* subtle divider */
 }
 
 .blue-menu .offcanvas-title {
@@ -133,9 +122,7 @@ header {
     width: 100%;
     text-align: center;
     background-color: #ffc107;
-    /* same as desktop primary */
     color: #001f54;
-    /* deep blue text */
     font-weight: 600;
     border-radius: 25px;
     padding: 0.5rem 1rem;
@@ -150,7 +137,6 @@ header {
 
 .blue-menu .nav-link:hover {
     background-color: #ffdd00;
-    /* brighter yellow on hover */
     color: #001f54;
     transform: scale(1.05);
 }
@@ -158,10 +144,8 @@ header {
 /* Close button color */
 .blue-menu .btn-close {
     filter: invert(100%);
-    /* makes it visible on blue background */
 }
 
-/* Ensure Offcanvas full height scrolls on mobile if content is long */
 .blue-menu .offcanvas-body {
     overflow-y: auto;
     padding-top: 1rem;
@@ -169,17 +153,14 @@ header {
 
 .blue-menu .nav-link.contact-link {
     background-color: #001f54;
-    /* deep blue */
     color: #ffc107;
 }
 
 .blue-menu .nav-link.contact-link:hover {
     background-color: #2563eb;
-    /* hover deep blue */
     color: #ffc107;
 }
 
-/* Optional: subtle shadow to make it pop */
 .blue-menu {
     box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -192,14 +173,11 @@ header {
 }
 
 /* Collapsible Right Menu */
-/* Keep Menu Toggle inside header */
 .menu-toggle {
     display: inline-flex;
-    /* only as wide as content */
     align-items: center;
     gap: 0.5rem;
     position: absolute;
-    /* positions inside header */
     top: 175px;
     right: 20px;
     background-color: #ffe74c;
@@ -257,9 +235,6 @@ header {
     border-radius: 0 10px 10px 0;
 }
 
-/* .sidebar-nav-collapsible ul li a:visited {
-    color: rgb(236, 114, 70);
-} */
 
 /* Active sidebar open */
 .sidebar-nav-collapsible.open {
@@ -277,11 +252,11 @@ h2 {
 
 /* Profile Picture */
 #about img {
-    width: 150px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
     object-fit: contain;
-    border-radius: 50%;
-    border: 5px solid #001f54;
+    border-radius: 60px;
+    border: 5px #001f54;
     transition: transform 0.3s, box-shadow 0.3s;
     display: block;
     margin: 1rem auto;
@@ -337,14 +312,10 @@ h2 {
     /* optional: match border to hover bg */
 }
 
-/* For solid buttons (btn-primary) */
 .btn-primary:hover {
     background-color: #2563eb;
-    /* your desired hover blue */
     color: #ffffff;
-    /* optional */
     border-color: #2563eb;
-    /* optional */
 }
 
 
@@ -396,7 +367,6 @@ footer a:visited {
     cursor: pointer;
 }
 
-/* Optional: subtle fade-in on scroll for About and Skills sections */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -414,7 +384,6 @@ footer a:visited {
     animation: fadeInUp 1s ease-in-out;
 }
 
-/* Optional: add shadow to skill badges for pop effect */
 #skills .d-flex span {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -503,8 +472,6 @@ form button:hover {
 }
 
 
-
-/* Default: Desktop */
 .nav-links {
     display: flex;
     gap: 0.5rem;
@@ -589,4 +556,214 @@ form button:hover {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
     }
+}
+
+/* Chat Icon */
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: #ffdd00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 3000;
+    animation: shake 0.6s ease-in-out 1s;
+    /* shake on load */
+}
+
+#chat-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    /* crop nicely */
+    border-radius: 50%;
+}
+
+#chat-tooltip {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background: #001f54;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Show tooltip briefly */
+#chat-icon:hover #chat-tooltip {
+    opacity: 1;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-3px, 0);
+    }
+
+    50% {
+        transform: translate(3px, 0);
+    }
+
+    75% {
+        transform: translate(-3px, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Chatbox */
+.chatbot {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border: 2px solid #001f54;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #001f54;
+    color: #ffdd00;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.chat-buttons {
+    display: flex;
+    gap: 2px;
+}
+
+.chat-header .chat-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+
+
+.chat-header button {
+    background-color: #001f54;
+    color: #ffdd00;
+    border: 1px solid #ffdd00;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.chat-header button:hover {
+    background-color: #ffdd00;
+    color: #001f54;
+    transform: scale(1.05);
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+.chat-footer button {
+    background: #001f54;
+    color: #ffdd00;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.bot-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#end-chat-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #001f54;
+    color: #ffdd00;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 10;
+    width: 80%;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#end-chat-modal.hidden {
+    display: none;
+}
+
+#end-chat-modal button {
+    margin: 5px;
+    padding: 5px 10px;
+    background: #ffdd00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #001f54;
 }
