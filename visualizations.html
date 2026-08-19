@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sefunmi | Data Visualization Dashboards</title>
+  <meta name="description"
+    content="Sefunmi Akin-Olukunle — data scientist and web developer in Indiana. Interactive data visualization portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Albert+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0e1733">
+  <link rel="icon" href="images/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Sefunmi">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" aria-hidden="true">
+          <rect width="26" height="26" rx="6" fill="#27418f" />
+          <circle cx="8" cy="8" r="2.6" fill="#f5f1e6" />
+          <circle cx="18" cy="8" r="2.6" fill="#e5a63c" />
+          <circle cx="8" cy="18" r="2.6" fill="#e5a63c" />
+          <circle cx="18" cy="18" r="2.6" fill="#f5f1e6" />
+        </svg> Sefunmi Akin-Olukunle</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="visualizations.html" aria-current="page">Visualizations</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Live &middot; Interactive &middot; Built with D3.js</p>
+      <h2>Data visualization portfolio</h2>
+      <p class="section-intro">Thirteen dashboards across clinical, business, climate, natural hazards, and statistics
+        &mdash; every one rendering live in your browser from code I can walk through line by line. Hover the charts,
+        drag the sliders, press the buttons.</p>
+
+      <div class="cat-filter">
+        <button class="cat-chip active" data-filter="all" type="button">All dashboards</button>
+        <button class="cat-chip" data-filter="clinical" type="button">Clinical &amp; health</button>
+        <button class="cat-chip" data-filter="business" type="button">Business</button>
+        <button class="cat-chip" data-filter="climate" type="button">Climate &amp; hazards</button>
+        <button class="cat-chip" data-filter="stats" type="button">Statistics</button>
+      </div>
+      <p class="filter-count" id="filter-count">Showing all 13 dashboards</p>
+
+      <div class="data-key">
+        <strong>About the data:</strong>
+        <span class="badge real">Real data</span> comes from a published source, cited on the chart.
+        <span class="badge modeled">Modeled</span> means the shape follows documented real-world patterns (NOAA normals,
+        EIA trends, the Gutenberg&ndash;Richter law) but exact values are generated &mdash; verify before citing.
+        <span class="badge sample">Sample data</span> is invented for demonstration.
+        I label these because knowing what your numbers actually are is the first job in analytics.
+      </div>
+
+      <article class="viz-panel" id="readmissions" data-cat="clinical" data-build="readmissions">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag clinical">Clinical</span>
+            <h3>Hospital 30-Day Readmissions</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">Readmission rates drive Medicare penalties, so hospitals track them by condition against
+          national benchmarks. Green bars beat the benchmark; the dashed markers show where the benchmark sits. Hover
+          any bar for discharge volume.</p>
+        <div class="kpi-row" id="kpi-readmissions"></div>
+        <div class="viz-stage" id="viz-readmissions"></div>
+        <p class="viz-note">Representative data modeled on CMS Hospital Readmissions Reduction Program measures. Built
+          with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="ed-flow" data-cat="clinical" data-build="ed-flow">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag clinical">Clinical</span>
+            <h3>Emergency Department Patient Flow</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">Two views of the same department: when patients arrive, and how long they wait by triage
+          level. The double-hump arrival curve is a real and well-known ED staffing challenge — one peak late morning, a
+          bigger one in the evening.</p>
+        <div class="kpi-row" id="kpi-ed"></div>
+        <div class="dash-grid">
+          <div class="dash-cell">
+            <h4>Arrivals by hour</h4>
+            <div id="viz-ed-arrivals"></div>
+          </div>
+          <div class="dash-cell">
+            <h4>Median wait by acuity (ESI)</h4>
+            <div id="viz-ed-wait"></div>
+          </div>
+        </div>
+        <p class="viz-note">Representative data following documented ED arrival and triage patterns. Built with D3.js.
+        </p>
+      </article>
+
+      <article class="viz-panel" id="trial" data-cat="clinical" data-build="trial">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag clinical">Clinical</span>
+            <h3>Clinical Trial Enrollment Funnel</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">Recruitment is where trials succeed or fail. This funnel traces 2,840 pre-screened
+          candidates down to 291 who completed the study — hover each stage for its conversion from the previous step.
+        </p>
+        <div class="kpi-row" id="kpi-trial"></div>
+        <div class="viz-stage" id="viz-trial"></div>
+        <p class="viz-note">Representative enrollment data. Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="gapminder" data-cat="clinical" data-build="gapminder">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag clinical">Global health</span>
+            <h3>Health &amp; Wealth of Nations</h3>
+          </div>
+          <span class="badge real">Real data · Gapminder 2007</span>
+        </div>
+        <p class="viz-about">Each bubble is a country: income per person against life expectancy, sized by population.
+          The log scale on income is what makes the global pattern legible — toggle it off to see why scale choice is a
+          design decision, not a default.</p>
+        <div class="viz-controls">
+          <label>Continent
+            <select id="gm-continent">
+              <option value="all">All</option>
+              <option>Africa</option>
+              <option>Americas</option>
+              <option>Asia</option>
+              <option>Europe</option>
+              <option>Oceania</option>
+            </select>
+          </label>
+          <label><input type="checkbox" id="gm-log" checked> Log scale (income)</label>
+        </div>
+        <div class="viz-stage" id="gm-stage"></div>
+        <p class="viz-note">Data: Gapminder Foundation, 2007 snapshot (40 countries). Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="revenue" data-cat="business" data-build="revenue">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag business">Business</span>
+            <h3>Revenue Performance vs. Target</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">The chart an operator actually opens on Monday morning: monthly revenue against target,
+          colored by whether the month hit, with the revenue mix beside it. Seasonality and a December spike are both
+          visible at a glance.</p>
+        <div class="kpi-row" id="kpi-revenue"></div>
+        <div class="dash-grid">
+          <div class="dash-cell" style="grid-column:1/-1">
+            <h4>Monthly revenue vs. target</h4>
+            <div id="viz-revenue"></div>
+          </div>
+          <div class="dash-cell">
+            <h4>Revenue by category</h4>
+            <div id="viz-revenue-mix"></div>
+          </div>
+        </div>
+        <p class="viz-note">Representative business data. Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="cohort" data-cat="business" data-build="cohort">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag business">Business</span>
+            <h3>Customer Cohort Retention</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">The standard SaaS retention view: each row is a signup cohort, each column a month after
+          signup. Reading down a column shows whether newer cohorts retain better than older ones — here they do, by
+          about nine points.</p>
+        <div class="kpi-row" id="kpi-cohort"></div>
+        <div class="viz-stage" id="viz-cohort"></div>
+        <p class="viz-note">Representative cohort data. Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="channels" data-cat="business" data-build="channels">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag business">Business</span>
+            <h3>Acquisition Channel Efficiency</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">Every marketing channel plotted by what it costs and how well it converts, sized by lead
+          volume. The quadrant lines split the chart into cheap-and-converting (top left, where you want to be) and
+          expensive-and-not.</p>
+        <div class="kpi-row" id="kpi-channels"></div>
+        <div class="viz-stage" id="viz-channels"></div>
+        <p class="viz-note">Representative marketing data. Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="cafe" data-cat="business" data-build="cafe">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag business">Business</span>
+            <h3>C.H. Caf&eacute; Operations Dashboard</h3>
+          </div>
+          <span class="badge sample">Sample data</span>
+        </div>
+        <p class="viz-about">I founded and run C.H. Caf&eacute;, a community caf&eacute; at RCCG Covenant House
+          Indianapolis, and use data to plan inventory, staffing, and volunteer schedules. This dashboard shows how I
+          structure that thinking &mdash; the numbers here are representative sample data, not the caf&eacute;'s
+          records.</p>
+        <div class="viz-controls">
+          <label>Period
+            <select id="cafe-period">
+              <option value="12">Last 12 weeks</option>
+              <option value="26">Last 26 weeks</option>
+            </select>
+          </label>
+        </div>
+        <div class="kpi-row" id="cafe-kpis"></div>
+        <div class="dash-grid">
+          <div class="dash-cell">
+            <h4>Weekly visitors</h4>
+            <div id="cafe-visitors"></div>
+          </div>
+          <div class="dash-cell">
+            <h4>Orders by category</h4>
+            <div id="cafe-category"></div>
+          </div>
+          <div class="dash-cell full">
+            <h4>Busiest hours (avg. orders per hour)</h4>
+            <div id="cafe-heat"></div>
+          </div>
+        </div>
+        <p class="viz-note">Sample data generated for demonstration. Layout and metrics mirror how I track real
+          caf&eacute; operations.</p>
+      </article>
+
+      <article class="viz-panel" id="climate" data-cat="climate" data-build="climate">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag climate">Climate</span>
+            <h3>Bloomington, Indiana Climate Profile</h3>
+          </div>
+          <span class="badge modeled">Modeled on NOAA normals</span>
+        </div>
+        <p class="viz-about">My own corner of Indiana: monthly temperature range and rainfall, plus a warming-stripes
+          strip showing annual temperature anomalies since 1950. Each stripe is one year &mdash; blue cooler than
+          average, red warmer.</p>
+        <div class="kpi-row" id="kpi-climate"></div>
+        <div class="viz-stage" id="viz-climate"></div>
+        <div class="dash-cell full" style="margin-top:1rem">
+          <h4>Annual temperature anomaly, 1950&ndash;2025</h4>
+          <div id="viz-stripes"></div>
+        </div>
+        <p class="viz-note">Monthly normals follow published NOAA 1991&ndash;2020 values for south-central Indiana; the
+          anomaly series is modeled to the documented regional warming trend. Verify against NOAA before citing exact
+          figures.</p>
+      </article>
+
+      <article class="viz-panel" id="tornado" data-cat="climate" data-build="tornado">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag climate">Natural hazards</span>
+            <h3>Indiana Tornado Seasonality</h3>
+          </div>
+          <span class="badge modeled">Modeled on NOAA/SPC patterns</span>
+        </div>
+        <p class="viz-about">Indiana sits on the eastern edge of tornado country, and its season has a distinctive
+          shape: a strong April&ndash;June peak plus a secondary November uptick. Stacking by EF rating shows how
+          strongly weak tornadoes outnumber violent ones.</p>
+        <div class="kpi-row" id="kpi-tornado"></div>
+        <div class="viz-stage" id="viz-tornado"></div>
+        <p class="viz-note">Counts are modeled on documented Indiana seasonality and EF distribution from NOAA Storm
+          Prediction Center records. Verify against SPC data before citing exact figures.</p>
+      </article>
+
+      <article class="viz-panel" id="quake" data-cat="climate" data-build="quake">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag climate">Natural hazards</span>
+            <h3>Global Earthquakes: Magnitude, Depth &amp; Frequency</h3>
+          </div>
+          <span class="badge modeled">Modeled on Gutenberg&ndash;Richter</span>
+        </div>
+        <p class="viz-about">A synthetic earthquake catalog drawn from the Gutenberg&ndash;Richter law &mdash; the
+          empirical rule that each one-point jump in magnitude means roughly ten times fewer quakes. The second chart
+          tests it: on a log axis, that relationship should be a straight line, and it is.</p>
+        <div class="kpi-row" id="kpi-quake"></div>
+        <div class="dash-grid">
+          <div class="dash-cell full">
+            <h4>Magnitude vs. focal depth by region</h4>
+            <div id="viz-quake-scatter"></div>
+          </div>
+          <div class="dash-cell">
+            <h4>Frequency&ndash;magnitude relationship</h4>
+            <div id="viz-quake-gr"></div>
+          </div>
+        </div>
+        <p class="viz-note">Catalog generated by inverse-transform sampling of the Gutenberg&ndash;Richter distribution
+          (b &asymp; 1). Built with D3.js.</p>
+      </article>
+
+      <article class="viz-panel" id="energy" data-cat="climate" data-build="energy">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag climate">Climate</span>
+            <h3>The US Energy Transition</h3>
+          </div>
+          <span class="badge modeled">Modeled on EIA trends</span>
+        </div>
+        <p class="viz-about">Twenty years of US electricity generation as a share of the total. Coal's collapse, natural
+          gas rising then plateauing, and the recent steep climb of wind and solar are all one picture &mdash; hover any
+          band for a specific year.</p>
+        <div class="kpi-row" id="kpi-energy"></div>
+        <div class="viz-stage" id="viz-energy"></div>
+        <p class="viz-note">Shares are modeled on documented EIA generation trends, normalized to 100%. Verify against
+          EIA data before citing exact figures.</p>
+      </article>
+
+      <article class="viz-panel" id="clt" data-cat="stats" data-build="clt">
+        <div class="viz-head">
+          <div>
+            <span class="cat-tag stats">Statistics</span>
+            <h3>Central Limit Theorem, Watched Live</h3>
+          </div>
+          <span class="badge live">Live simulation</span>
+        </div>
+        <p class="viz-about">Start with a population that is anything but normal &mdash; skewed, flat, or split in two.
+          Draw repeated samples and watch the distribution of their means converge to a bell curve. This is the result
+          that makes most of everyday inference possible.</p>
+        <div class="viz-controls">
+          <label>Population
+            <select id="clt-dist">
+              <option value="exp">Right-skewed (exponential)</option>
+              <option value="uniform">Flat (uniform)</option>
+              <option value="bimodal">Split (bimodal)</option>
+            </select>
+          </label>
+          <label>Sample size n
+            <input type="range" id="clt-n" min="2" max="60" value="15">
+            <span id="clt-n-val">15</span>
+          </label>
+          <button class="btn btn-dark" id="clt-run" type="button">Draw 200 samples</button>
+          <button class="btn btn-outline" id="clt-reset" type="button">Reset</button>
+        </div>
+        <div class="viz-stage" id="clt-stage"></div>
+        <p class="viz-note">Samples are generated in your browser; the orange curve is the normal distribution predicted
+          by the CLT.</p>
+      </article>
+
+      <div class="bi-note" id="tableau-powerbi">
+        <h3>Working in Tableau &amp; Power BI</h3>
+        <p>These dashboards are hand-built in D3.js, which is how I demonstrate that I understand what a chart is doing
+          underneath. In practice, most teams work in Tableau or Power BI &mdash; and published dashboards from either
+          tool embed directly into this page.</p>
+        <p>When I publish a workbook to <strong>Tableau Public</strong> or a report to <strong>Power BI</strong>, the
+          embed code drops straight into <code>visualizations.html</code> beside these panels, so the same page can hold
+          both hand-coded and BI-tool work. The README in this project's repo documents the exact steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Sefunmi Akin-Olukunle. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/deborah-sefunmi-akin-olukunle/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dsakinolu" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:dsakinolukunle@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button id="chat-launcher" aria-haspopup="dialog">Ask Sefunmi AI</button>
+  <div id="chatbot" role="dialog" aria-label="Sefunmi AI chat">
+    <header>
+      <span>Sefunmi AI</span>
+      <button id="chat-close" aria-label="Close chat">&times;</button>
+    </header>
+    <div id="chat-body" aria-live="polite"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask about my work..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/viz-core.js" defer></script>
+  <script src="js/dash-clinical.js" defer></script>
+  <script src="js/dash-business.js" defer></script>
+  <script src="js/dash-climate.js" defer></script>
+  <script src="js/dash-stats.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sefunmi Akin-Olukunle | Data Visualization Portfolio</title>
+  <meta name="description" content="Sefunmi Akin-Olukunle — data scientist and web developer in Indiana. Interactive data visualization portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Albert+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0e1733">
+  <link rel="icon" href="images/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Sefunmi">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#27418f"/><circle cx="8" cy="8" r="2.6" fill="#f5f1e6"/><circle cx="18" cy="8" r="2.6" fill="#e5a63c"/><circle cx="8" cy="18" r="2.6" fill="#e5a63c"/><circle cx="18" cy="18" r="2.6" fill="#f5f1e6"/></svg> Sefunmi Akin-Olukunle</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="visualizations.html">Visualizations</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero on-dark">
+    <svg id="hero-cloth" aria-hidden="true"></svg>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow">Data scientist &middot; Indiana</p>
+      <h1>Data, made <span class="dyed">visible.</span></h1>
+      <p class="lede">I'm Sefunmi &mdash; a data scientist and web developer who turns raw data into dashboards, apps, and interfaces people actually understand. B.Sc. Informatics with Distinction, Indiana University. M.Sc. Data Science in progress.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="visualizations.html">Explore 13 live dashboards</a>
+        <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+    <p class="hero-caption">Pattern drawn live with D3.js &middot; inspired by Yorùbá àdìrẹ textile</p>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow reveal">Featured work</p>
+      <h2 class="reveal">Thirteen dashboards, all running in your browser</h2>
+      <p class="section-intro reveal">No screenshots &mdash; every chart is live, interactive, and built with D3.js, spanning clinical outcomes, business operations, climate, and natural hazards.</p>
+      <div class="card-grid">
+        <article class="card reveal">
+          <div class="thumb" id="thumb-gapminder"></div>
+          <div class="body">
+            <p class="meta">Clinical &amp; health &middot; 4 dashboards</p>
+            <h3>Clinical &amp; Health Analytics</h3>
+            <p>Hospital readmissions against national benchmarks, emergency department flow, clinical trial enrollment funnels, and global health versus income.</p>
+            <div class="links"><a href="visualizations.html#readmissions">Explore &rarr;</a></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="thumb" id="thumb-cafe"></div>
+          <div class="body">
+            <p class="meta">Business &middot; 4 dashboards</p>
+            <h3>Business &amp; Operations</h3>
+            <p>Revenue against target, customer cohort retention, acquisition channel efficiency, and the operations dashboard for the café I founded.</p>
+            <div class="links"><a href="visualizations.html#revenue">Explore &rarr;</a></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="thumb" id="thumb-clt"></div>
+          <div class="body">
+            <p class="meta">Climate &amp; hazards &middot; 4 dashboards</p>
+            <h3>Climate &amp; Natural Hazards</h3>
+            <p>Bloomington's climate profile with warming stripes, Indiana tornado seasonality by EF rating, global earthquake frequency, and the US energy transition.</p>
+            <div class="links"><a href="visualizations.html#climate">Explore &rarr;</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <p class="eyebrow reveal">Toolkit</p>
+      <h2 class="reveal">Skills</h2>
+      <div class="skills-cols">
+        <div class="reveal">
+          <h3>Data</h3>
+          <ul>
+            <li><strong>Python</strong> &mdash; pandas, analysis</li>
+            <li><strong>SQL / MySQL</strong></li>
+            <li><strong>D3.js</strong> &amp; interactive charts</li>
+            <li><strong>Tableau</strong></li>
+            <li>Statistics &amp; data cleaning</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3>Web</h3>
+          <ul>
+            <li><strong>JavaScript</strong>, HTML, CSS</li>
+            <li><strong>PHP</strong> full-stack apps</li>
+            <li>Responsive &amp; accessible UI</li>
+            <li>GitHub &amp; version control</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <h3>Design &amp; delivery</h3>
+          <ul>
+            <li><strong>Figma</strong> prototyping</li>
+            <li>Photoshop</li>
+            <li>QA &amp; software testing</li>
+            <li>Agile teamwork</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="wrap">
+      <p class="eyebrow reveal">Beyond the screen</p>
+      <h2 class="reveal">I build for people, not just pixels</h2>
+      <p class="section-intro reveal">I founded and run C.H. Caf&eacute;, a community caf&eacute; in Indianapolis, and built an interactive platform that teaches children the Yor&ugrave;b&aacute; language. Whether it's a dashboard or a drink menu, I care about making things people genuinely use.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="about.html">More about me</a>
+        <a class="btn btn-ghost" href="projects.html">See all projects</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Sefunmi Akin-Olukunle. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/deborah-sefunmi-akin-olukunle/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dsakinolu" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:dsakinolukunle@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button id="chat-launcher" aria-haspopup="dialog">Ask Sefunmi AI</button>
+  <div id="chatbot" role="dialog" aria-label="Sefunmi AI chat">
+    <header>
+      <span>Sefunmi AI</span>
+      <button id="chat-close" aria-label="Close chat">&times;</button>
+    </header>
+    <div id="chat-body" aria-live="polite"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask about my work..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/hero.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sefunmi | About</title>
+  <meta name="description" content="Sefunmi Akin-Olukunle — data scientist and web developer in Indiana. Interactive data visualization portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Albert+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0e1733">
+  <link rel="icon" href="images/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Sefunmi">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html"><svg class="mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#27418f"/><circle cx="8" cy="8" r="2.6" fill="#f5f1e6"/><circle cx="18" cy="8" r="2.6" fill="#e5a63c"/><circle cx="8" cy="18" r="2.6" fill="#e5a63c"/><circle cx="18" cy="18" r="2.6" fill="#f5f1e6"/></svg> Sefunmi Akin-Olukunle</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visualizations.html">Visualizations</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Hello</p>
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div class="prose">
+          <p>Hi! My legal name is <strong>Deborah O. Akin-Olukunle</strong>, but I go by <strong>Sefunmi</strong>. I'm a data scientist and web developer with a B.Sc. in Informatics <em>with Distinction</em> from Indiana University Bloomington, with minors in Data Science, Web Design &amp; Development, and African Languages &mdash; now completing my M.Sc. in Data Science at IU.</p>
+          <p>My journey began as a pre-med student aspiring to become an Obstetrician &amp; Gynecologist. Along the way I discovered the transformative power of technology to improve access, learning, and healthcare &mdash; especially for children and underserved communities. That realization led me to Informatics, where I could combine analytical skill, creativity, and problem-solving to build tools that make a real difference.</p>
+          <p>Through my studies I've developed expertise in data science, web development, and African languages. I independently designed the <strong>Yor&ugrave;b&aacute; Learning Website</strong>, an interactive platform that teaches children Yor&ugrave;b&aacute; through games and music, and built full-stack database applications with PHP and MySQL.</p>
+          <p>As a <strong>Product Owner and Software QA Engineer Intern at iGeeksNG Solutions</strong>, I work on quality assurance testing for <strong>BizAppointly</strong>, an appointment and business scheduling platform &mdash; writing and running test plans, reporting defects, and translating what users need into development priorities.</p>
+          <p>Beyond academics, I thrive in leadership and community roles. I founded and manage <strong>C.H. Caf&eacute;</strong> at RCCG Covenant House Indianapolis, where I coordinate volunteers, optimize operations with data, design branding, and create a welcoming space for the community.</p>
+          <p>My goal is to apply data and technology to healthcare and educational initiatives that positively impact children and communities &mdash; through interactive apps, dashboards, and data-driven solutions that are innovative, accessible, and meaningful.</p>
+        </div>
+        <aside class="fact-box">
+          <h3>At a glance</h3>
+          <ul>
+            <li>B.Sc. Informatics, with Distinction &mdash; Indiana University</li>
+            <li>M.Sc. Data Science &mdash; in progress, IU</li>
+            <li>Minors: Data Science &middot; Web Design &amp; Development &middot; African Languages</li>
+            <li>Product Owner &amp; Software QA Engineer Intern &mdash; iGeeksNG Solutions</li>
+            <li>Based in Indiana</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Sefunmi Akin-Olukunle. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/deborah-sefunmi-akin-olukunle/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/dsakinolu" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:dsakinolukunle@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button id="chat-launcher" aria-haspopup="dialog">Ask Sefunmi AI</button>
+  <div id="chatbot" role="dialog" aria-label="Sefunmi AI chat">
+    <header>
+      <span>Sefunmi AI</span>
+      <button id="chat-close" aria-label="Close chat">&times;</button>
+    </header>
+    <div id="chat-body" aria-live="polite"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask about my work..." autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js"));
+  </script>
+</body>
+</html>
